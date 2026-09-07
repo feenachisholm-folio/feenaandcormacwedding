@@ -762,7 +762,8 @@
       .hero-rsvp-btn { align-self: center; }
       .hero h1 { display: flex; flex-direction: column; align-items: center; gap: 0; text-align: center; }
       .hero-name { display: block; line-height: 1.05; width: 100%; text-align: center; }
-      .hero-ampersand { display: block; font-size: clamp(1.2rem, 4vw, 1.8rem); line-height: 1.4; margin: 0 auto; color: #888; text-align: center; width: 100%; }
+      .hero-name:first-child { display: inline; }
+      .hero-ampersand { display: inline; font-size: inherit; line-height: inherit; margin: 0 0.2rem; color: #2A2A2A; }
 
       nav.scrolled { left: 5%; right: 5%; }
 
@@ -787,6 +788,7 @@
     /* Mobile */
     @media (max-width: 480px) {
       nav { gap: 1rem; font-size: 0.65rem; padding: 0.75rem 1rem; letter-spacing: 0.08em; }
+      .hero { margin-top: 42px; }
       nav.scrolled { left: 3%; right: 3%; padding: 0.6rem 1.5rem; }
 
       .hero-photos { height: 45vh; min-height: 45vh; }
