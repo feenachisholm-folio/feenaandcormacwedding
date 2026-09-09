@@ -24,68 +24,145 @@
       --radius:  9999px;
     }
 
-    /* ── DARK MODE ── */
+    /* ── DARK MODE (Material Design) ── */
+    /* Base:     #121212  Surface dp1: #1E1E1E  Surface dp2: #232323  Surface dp4: #282828
+       High-emp text: rgba(255,255,255,0.87)   Medium: rgba(255,255,255,0.60)
+       Dividers: rgba(255,255,255,0.12)         Accent: #FF8FAB (lightened for dark)        */
     [data-theme="dark"] {
-      --ivory:   #1e1e1e;
-      --cream:   #2a2a2a;
-      --forest:  #f0f0f0;
-      --ink:     #ffffff;
-      --mid:     #aaaaaa;
-      --border:  #3a3a3a;
+      --ivory:   #1E1E1E;
+      --cream:   #232323;
+      --forest:  rgba(255,255,255,0.87);
+      --ink:     rgba(255,255,255,0.87);
+      --mid:     rgba(255,255,255,0.60);
+      --border:  rgba(255,255,255,0.12);
+      --red:     #FF8FAB;
     }
-    [data-theme="dark"] body { background: #121212; color: #f0f0f0; }
-    [data-theme="dark"] nav { background: rgba(18,18,18,0.96); }
-    [data-theme="dark"] nav a { color: #f0f0f0; }
+    [data-theme="dark"] body { background: #121212; color: rgba(255,255,255,0.87); }
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4  { color: rgba(255,255,255,0.87); }
+    [data-theme="dark"] p,
+    [data-theme="dark"] li,
+    [data-theme="dark"] label,
+    [data-theme="dark"] .form-label { color: rgba(255,255,255,0.60); }
+    [data-theme="dark"] .section-tag,
+    [data-theme="dark"] .hero-eyebrow,
+    [data-theme="dark"] .hero-date,
+    [data-theme="dark"] .hero-venue { color: rgba(255,255,255,0.87); }
+    [data-theme="dark"] .hero-name,
+    [data-theme="dark"] .hero-ampersand { color: rgba(255,255,255,0.87) !important; -webkit-text-fill-color: rgba(255,255,255,0.87) !important; }
+    [data-theme="dark"] nav { background: rgba(18,18,18,0.97); border-bottom-color: rgba(255,255,255,0.08); }
+    [data-theme="dark"] nav a { color: rgba(255,255,255,0.87); }
     [data-theme="dark"] nav.scrolled a { color: #fff; }
-    [data-theme="dark"] .hero { background: linear-gradient(var(--hero-bg-rot), #1a1a1a 0%, #221218 35%, #1a1a1a 55%, #221218 80%, #1a1a1a 100%); }
-    [data-theme="dark"] .hero-text { color: #f0f0f0; }
-    [data-theme="dark"] .hero h1 { color: #f0f0f0; }
-    [data-theme="dark"] .detail-card { background: #1e1e1e; border-color: #3a3a3a; }
-    [data-theme="dark"] .faq-item { border-color: #3a3a3a; }
-    [data-theme="dark"] .faq-question { color: #f0f0f0; }
-    [data-theme="dark"] #rsvp.full-bleed { background: linear-gradient(var(--rsvp-bg-rot), #121212 0%, #1a1218 35%, #121212 55%, #1a1218 80%, #121212 100%); }
-    [data-theme="dark"] .rsvp-form { background: linear-gradient(#1e1e1e, #1e1e1e) padding-box, linear-gradient(var(--form-rot), #FFD6E0, #FF6B8A, #D41248, #FF6B8A, #FFD6E0) border-box; }
-    [data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea { background: #2a2a2a; color: #f0f0f0; border-color: #3a3a3a; }
-    [data-theme="dark"] .form-label { color: #aaaaaa; }
-    [data-theme="dark"] footer { background: #1e1e1e; border-color: #3a3a3a; }
-    [data-theme="dark"] .hero-date, [data-theme="dark"] .hero-eyebrow { color: #aaaaaa; }
+    [data-theme="dark"] .hero { background: linear-gradient(var(--hero-bg-rot), #121212 0%, #1a1218 35%, #121212 55%, #1a1218 80%, #121212 100%); }
+    [data-theme="dark"] .hero-text { background: #1E1E1E; }
+    [data-theme="dark"] #details { background: #121212 !important; }
+    [data-theme="dark"] #faq    { background: #121212 !important; }
     [data-theme="dark"] section.full-bleed { background: #121212; }
-    [data-theme="dark"] #details { background: #141414 !important; }
-    [data-theme="dark"] #faq { background: #141414 !important; }
-    [data-theme="dark"] #details h2,
-    [data-theme="dark"] #details h3,
-    [data-theme="dark"] #faq h2,
-    [data-theme="dark"] #faq h3 { color: #f0f0f0; }
-    [data-theme="dark"] .section-tag { color: #aaaaaa; }
-    [data-theme="dark"] .detail-card h3 { color: #f0f0f0; }
-    [data-theme="dark"] .faq-answer-inner { color: #aaaaaa; }
-    [data-theme="dark"] .faq-answer-inner a { color: #FF6B8A; }
-    [data-theme="dark"] footer { background: #141414 !important; border-color: #2a2a2a; }
+    [data-theme="dark"] #rsvp.full-bleed   { background: linear-gradient(var(--rsvp-bg-rot), #121212 0%, #181218 35%, #121212 55%, #181218 80%, #121212 100%); }
+    [data-theme="dark"] .detail-card { background: #1E1E1E; border-color: rgba(255,255,255,0.12); }
+    [data-theme="dark"] .detail-card:hover {
+      border: 2px solid transparent;
+      padding: calc(2rem - 1px);
+      background:
+        linear-gradient(#000000, #000000) padding-box,
+        linear-gradient(var(--border-rot), #FFD6E0, #FF6B8A, #FF0000, #FF6B8A, #FFD6E0) border-box;
+      animation: borderRotate 4s linear infinite;
+    }
+    [data-theme="dark"] .detail-card:hover h3,
+    [data-theme="dark"] .detail-card:hover p,
+    [data-theme="dark"] .detail-card:hover svg { color: #ffffff; stroke: #ffffff; }
+    [data-theme="dark"] .faq-item   { border-color: rgba(255,255,255,0.12); }
+    [data-theme="dark"] .faq-question { color: rgba(255,255,255,0.87); }
+    [data-theme="dark"] .faq-answer-inner { color: rgba(255,255,255,0.60); }
+    [data-theme="dark"] .faq-answer-inner a { color: #FF8FAB; }
+    [data-theme="dark"] .faq-question:hover {
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      -webkit-text-fill-color: #FFADC5;
+      color: #FFADC5;
+    }
+    [data-theme="dark"] .faq-question:hover .faq-chevron { stroke: #FFADC5; color: #FFADC5; }
+    [data-theme="dark"] .rsvp-form { background: linear-gradient(#1E1E1E,#1E1E1E) padding-box, linear-gradient(var(--form-rot),#FFD6E0,#FF8FAB,#D41248,#FF8FAB,#FFD6E0) border-box; }
+    [data-theme="dark"] input[type="text"],
+    [data-theme="dark"] input[type="email"],
+    [data-theme="dark"] input[type="number"],
+    [data-theme="dark"] select,
+    [data-theme="dark"] textarea { background: #282828 !important; color: rgba(255,255,255,0.87) !important; border-color: rgba(255,255,255,0.12) !important; }
+    [data-theme="dark"] input:focus,
+    [data-theme="dark"] select:focus,
+    [data-theme="dark"] textarea:focus { border-color: #FF8FAB !important; }
+    [data-theme="dark"] footer { background: #1E1E1E !important; border-color: rgba(255,255,255,0.12); }
+    [data-theme="dark"] footer p { color: rgba(255,255,255,0.60); }
+    [data-theme="dark"] .guest-block { background: #282828; border-color: rgba(255,255,255,0.12); }
+    [data-theme="dark"] .transport-item { background: #1E1E1E; border-color: rgba(255,255,255,0.12); }
+    [data-theme="dark"] :focus-visible { outline-color: #FF8FAB; }
+    [data-theme="dark"] input[type="radio"],
+    [data-theme="dark"] input[type="checkbox"] { accent-color: #FF8FAB; }
+    [data-theme="dark"] ::placeholder { color: rgba(255,255,255,0.35); }
 
     /* toggle button */
     #dark-toggle {
-      background: none; border: none; cursor: pointer;
-      color: var(--forest); padding: 0; line-height: 1;
-      display: flex; align-items: center;
-      transition: color 0.2s;
-    }
-    #dark-toggle:hover { color: #FF6B8A; }
-    [data-theme="dark"] #dark-toggle { color: #f0f0f0; }
-    footer #dark-toggle {
-      margin: 1.25rem auto 0;
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      height: 18px;
+      gap: 0.5rem;
+      cursor: pointer;
+      user-select: none;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--mid);
-      opacity: 0.7;
+      color: #555;
+      -webkit-text-fill-color: #555;
+      transition: color 0.2s;
     }
-    footer #dark-toggle:hover { opacity: 1; color: #FF6B8A; }
-    [data-theme="dark"] .icon-moon { display: none; }
-    :not([data-theme="dark"]) .icon-sun { display: none; }
+    .toggle-icon { flex-shrink: 0; display: block; width: 12px; height: 12px; align-self: center; }
+    .toggle-label { line-height: 0; align-self: center; display: inline-flex; align-items: center; }
+    #dark-toggle:hover { color: #FF6B8A; -webkit-text-fill-color: #FF6B8A; }
+    #dark-toggle:hover .toggle-track { background: #FFB3C6; }
+    .toggle-track {
+      width: 32px;
+      height: 18px;
+      border-radius: 9999px;
+      background: #ccc;
+      position: relative;
+      flex-shrink: 0;
+      align-self: center;
+      transition: background 0.25s;
+    }
+    .toggle-thumb {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      transition: transform 0.25s;
+    }
+    [data-theme="dark"] .toggle-track { background: #FF8FAB; }
+    [data-theme="dark"] .toggle-thumb { transform: translateX(14px); }
+    [data-theme="dark"] #dark-toggle { color: #fff !important; -webkit-text-fill-color: #fff !important; }
+    [data-theme="dark"] #dark-toggle .toggle-icon,
+    [data-theme="dark"] #dark-toggle .toggle-label {
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    [data-theme="dark"] #dark-toggle:hover { color: #FF8FAB !important; -webkit-text-fill-color: #FF8FAB !important; }
+    [data-theme="dark"] #dark-toggle:hover .toggle-icon,
+    [data-theme="dark"] #dark-toggle:hover .toggle-label { color: #FF8FAB !important; -webkit-text-fill-color: #FF8FAB !important; }
+    [data-theme="dark"] #dark-toggle:hover .toggle-track { background: #FF6B8A; }
+    html[data-theme="dark"] .icon-moon { display: none; }
+    html:not([data-theme="dark"]) .icon-sun { display: none; }
 
     html { scroll-behavior: smooth; }
 
@@ -1428,16 +1505,17 @@
       </button>
       <p style="text-align:left;flex:1;margin:0;">Mount Juliet Estate</p>
     </div>
-<div class="copy-email-wrap">
+    <div class="copy-email-wrap">
       <a href="mailto:feenaosullivan@gmail.com" id="copy-email-btn" style="color:var(--mid);text-decoration:none;cursor:pointer;font-weight:500;font-size:0.75rem;letter-spacing:0.15em;" title="Click to copy">feenaosullivan@gmail.com</a>
       <span class="copy-confirm" id="copy-confirm" aria-live="polite">Copied!</span>
     </div>
-    <button id="dark-toggle" aria-label="Toggle dark mode">
-      <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <span class="icon-moon">Dark mode</span>
-      <span class="icon-sun">Light mode</span>
-    </button>
+    <div id="dark-toggle" role="switch" aria-label="Toggle dark mode" tabindex="0">
+      <svg class="toggle-icon icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg class="toggle-icon icon-moon" width="12" height="12" viewBox="2 2 20 20" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="toggle-label icon-sun">Light</span>
+      <span class="toggle-label icon-moon">Dark</span>
+      <span class="toggle-track"><span class="toggle-thumb"></span></span>
+    </div>
   </footer>
 
   <script>
@@ -1556,12 +1634,15 @@
     const darkToggle = document.getElementById('dark-toggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
-    darkToggle.addEventListener('click', () => {
+    const toggle = (e) => {
+      if (e.type === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
-    });
+    };
+    darkToggle.addEventListener('click', toggle);
+    darkToggle.addEventListener('keydown', toggle);
 
     // ── SCROLL REVEAL ──────────────────────────────────────────
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
